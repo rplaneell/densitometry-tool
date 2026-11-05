@@ -9,3 +9,5 @@ Skills most useful for dashboards: `frontend-design` (visual design direction), 
 Not included on purpose: `docx`, `pdf`, `pptx` and `xlsx` have a proprietary "all rights reserved" licence that does not allow copying, and `doc-coauthoring` ships without a licence file. Get them from the original repository.
 
 Secrets: API keys go only in a local `.env` file, which `.gitignore` blocks. `.env.example` lists the variable names with empty values.
+
+Third party skill added: `skills_external/dashboard-design` from `abdiraimov-otabek/dashboard-design-skill` (commit b813324), kept with its own LICENSE. It is a design guide with no scripts.

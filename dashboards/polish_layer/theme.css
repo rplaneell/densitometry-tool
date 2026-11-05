@@ -16,7 +16,7 @@ main > section .sec-head h2{font-weight:600;font-size:clamp(28px,3vw,40px);line-
 .sec-head .line{width:72px;height:4px;border-radius:4px;background:var(--jade)}
 /* top bars: quiet */
 .utilbar{background:var(--werfen-deep)}
-.site-header{background:rgba(255,255,255,.95);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid var(--g200)}
+.site-header{background:rgba(255,255,255,.95);border-bottom:1px solid var(--g200)}
 .stepnav a.on::after{background:var(--jade)!important}
 .site-header.pl-scrolled{box-shadow:0 8px 24px rgba(10,36,99,.10)}
 /* hero: deep sapphire with ocean light */
@@ -54,4 +54,27 @@ table tbody tr:hover{background:var(--blue100)}
 .hero-field{opacity:.35!important}
 .ribbon{display:none!important}
 .hero-visual svg{filter:hue-rotate(-14deg) saturate(.85)}
+
+/*STRUCTURE-START layout redesign: compact hero, left rail, wider content, tighter rhythm. No content moved.*/
+.hero{min-height:0!important;padding:0}
+.hero > .wrap{padding-top:36px;padding-bottom:44px}
+.hero h1{font-size:clamp(28px,3.1vw,42px)}
+.hero .lead{font-size:14.5px;line-height:1.65;max-width:60ch}
+.hero-visual{zoom:.82}
+main > section{padding:60px 0}
+#boxes{padding:48px 0 44px}
+.sec-head{margin-bottom:28px}
+@media (min-width:1500px){
+  .site-header .wrap{height:56px}
+  .site-header .brand-logo{height:36px;width:auto}
+  .wrap{max-width:1640px;margin-left:max(236px,calc((100vw - 1640px)/2 + 110px));margin-right:28px}
+  .site-header nav{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:35;width:190px}
+  .site-header .stepnav{display:flex;flex-direction:column;align-items:stretch;gap:2px;height:auto;padding:8px;background:#fff;border:1px solid var(--g200);border-radius:var(--r-md);box-shadow:var(--shadow);list-style:none;margin:0}
+  .site-header .stepnav li{height:auto}
+  .site-header .stepnav a{height:auto;padding:11px 14px;border-radius:10px}
+  .site-header .stepnav a::after{left:0;right:auto;top:10px;bottom:10px;width:3px;height:auto;border-radius:3px;transform:scaleY(0);transform-origin:50% 50%}
+  .site-header .stepnav a.on::after{transform:scaleY(1)!important}
+  .site-header .stepnav a:hover{background:var(--blue100)!important}
+}
+/*STRUCTURE-END*/
 /*THEME-END*/
