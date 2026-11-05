@@ -1,7 +1,7 @@
 import sys
-base=sys.argv[1]; out=sys.argv[2]
+base=sys.argv[1]; out=sys.argv[2]; script=sys.argv[3] if len(sys.argv)>3 else 'entrance.js'
 h=open(base,encoding='utf8').read()
-gsap=open('vendor/gsap.min.js',encoding='utf8').read(); ent=open('entrance.js',encoding='utf8').read()
+gsap=open('vendor/gsap.min.js',encoding='utf8').read(); ent=open(script,encoding='utf8').read()
 cover_css='<style>#he-cover{position:fixed;inset:0;z-index:2147483000;background:#080B10}</style>\n'
 init="""<script>
 (function(){

@@ -44,3 +44,7 @@ Bugs found and fixed while building this: slab text too faint for small labels (
 - Glass uses `backdrop-filter` (blur). It is supported by current Chrome, Safari, Edge and Firefox, but it costs GPU time on very old devices. The Customize panel's glass intensity lowers it.
 - Not yet checked on a real 4K display or on real phones; checked at those pixel sizes in a software rendered browser.
 - Water droplets are decoration and are not physically accurate. The molecule art is schematic.
+
+## Entrance
+
+The entrance is a short product film shot, not a science diagram: water beads form on a dark rough surface (like drops on a water repelling mat), merge into one clear glass sphere, the wordmark reveals, and the scene dissolves into this dashboard. Reference photos: beads on a textured lab mat, and a single bead on a leaf. There is no default logo. See entrance/README.md. The earlier molecular version is kept as entrance/hydra_entrance_molecular.js.
