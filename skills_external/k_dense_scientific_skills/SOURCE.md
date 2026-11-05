@@ -1,0 +1,1 @@
+Copied from the public repository `K-Dense-AI/scientific-agent-skills` (commit a25cf9e, 2 November 2026), MIT licence (see LICENSE.md). Only three skills are included: `scientific-visualization` (Matplotlib, Seaborn and Plotly interactive HTML export, accessibility, uncertainty), `matplotlib` and `seaborn`. The repository has 177 skills; get the rest from the original.

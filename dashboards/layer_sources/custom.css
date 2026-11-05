@@ -1,0 +1,46 @@
+/*CUSTOM-START customize panel and the settings it drives*/
+#pl-cust-btn{display:inline-flex;align-items:center;gap:6px;margin-right:14px;padding:5px 12px;border:1px solid rgba(255,255,255,.55);border-radius:var(--r-sm);background:transparent;color:#fff;font:700 12px var(--font);letter-spacing:.03em;cursor:pointer}
+#pl-cust-btn:hover{background:rgba(255,255,255,.14)}
+#pl-cust-btn svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#pl-cust{position:fixed;top:0;right:0;height:100vh;width:min(372px,100vw);transform:translateX(105%);visibility:hidden;transition:transform .22s ease,visibility 0s linear .22s;z-index:10002;background:#fff;color:var(--g700);box-shadow:-14px 0 40px rgba(6,23,68,.18);overflow-y:auto;padding:18px 20px 32px;font:13.5px/1.5 var(--font)}
+#pl-cust.open{transform:none;visibility:visible;transition:transform .22s ease}
+#pl-cust .pltop{display:flex;align-items:center;justify-content:space-between;margin:0 0 6px}
+#pl-cust h2{margin:0;font-family:var(--serif);font-size:21px;color:var(--werfen)}
+#pl-cust .plx{border:0;background:none;font-size:24px;line-height:1;cursor:pointer;color:var(--g500);padding:4px 8px}
+#pl-cust .plsub{margin:0 0 14px;color:var(--g500);font-size:12.5px}
+#pl-cust fieldset{border:0;border-top:1px solid var(--g200);margin:0;padding:12px 0 6px}
+#pl-cust legend{padding:0;font:700 12px var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--blue500)}
+#pl-cust .plr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0}
+#pl-cust .plr > span.l{flex:0 0 100%;font-weight:600;color:var(--werfen)}
+#pl-cust .pls{display:inline-flex;border:1px solid var(--g200);border-radius:999px;overflow:hidden;background:#fff}
+#pl-cust .pls button{border:0;background:none;padding:6px 12px;font:600 12.5px var(--font);color:var(--werfen);cursor:pointer}
+#pl-cust .pls button[aria-pressed=true]{background:var(--werfen);color:#fff}
+#pl-cust .plsw{display:inline-flex;gap:0;border:2px solid transparent;border-radius:999px;padding:3px;background:#fff;cursor:pointer}
+#pl-cust .plsw[aria-pressed=true]{border-color:var(--werfen)}
+#pl-cust .plsw i{display:block;width:16px;height:22px}
+#pl-cust .plsw i:first-child{border-radius:999px 0 0 999px}#pl-cust .plsw i:last-child{border-radius:0 999px 999px 0}
+#pl-cust .pldot{width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;outline:1px solid var(--g200)}
+#pl-cust .pldot[aria-pressed=true]{border-color:#fff;outline:2px solid var(--werfen)}
+#pl-cust label.plck{display:flex;align-items:center;gap:8px;margin:7px 0}
+#pl-cust input[type=range]{width:150px;accent-color:var(--blue500)}
+#pl-cust select{padding:5px 8px;border:1px solid var(--g200);border-radius:var(--r-sm);font:13px var(--font);background:#fff;color:var(--werfen)}
+#pl-cust .plact button{margin:4px 6px 0 0;padding:6px 12px;border:1px solid var(--g200);border-radius:999px;background:#fff;font:600 12.5px var(--font);color:var(--werfen);cursor:pointer}
+#pl-cust .plact button:hover{background:var(--blue100)}
+#pl-cust .plnote{margin:8px 0 0;font-size:12px;color:var(--g500)}
+@media (prefers-reduced-motion:reduce){#pl-cust{transition:none}}
+@media print{#pl-cust,#pl-cust-btn{display:none!important}}
+/* settings */
+html[data-pl-density=compact] main > section{padding:34px 0}
+html[data-pl-density=compact] .sec-head{margin-bottom:16px}
+html[data-pl-density=roomy] main > section{padding:92px 0}
+html[data-pl-heading=sans] h1,html[data-pl-heading=sans] h2,html[data-pl-heading=sans] h3,html[data-pl-heading=sans] .card h2,html[data-pl-heading=sans] main > section .sec-head h2,html[data-pl-heading=sans] #pl-explore h3,html[data-pl-heading=sans] #pl-help h2,html[data-pl-heading=sans] #pl-cust h2{font-family:var(--font);letter-spacing:-.015em}
+html[data-pl-corners=sharp]{--r-sm:2px;--r-md:3px}
+html[data-pl-corners=sharp] .btn,html[data-pl-corners=sharp] #pl-explore .tabs,html[data-pl-corners=sharp] #pl-explore .tabs button,html[data-pl-corners=sharp] #pl-explore .ctl button{border-radius:3px}
+html[data-pl-corners=round]{--r-sm:10px;--r-md:22px}
+html[data-pl-hero=full] .hero{min-height:min(860px,calc(100vh - 122px))!important}
+html[data-pl-hero=full] .hero > .wrap{padding-top:84px;padding-bottom:104px}
+html[data-pl-hero=full] .hero-visual{zoom:1}
+html[data-pl-hero=hidden] .hero{display:none!important}
+html[data-pl-contrast=high] .card,html[data-pl-contrast=high] #pl-explore{border-width:2px}
+html[data-pl-contrast=high] body{color:#0F1822}
+/*CUSTOM-END*/

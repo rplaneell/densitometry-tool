@@ -11,3 +11,5 @@ Not included on purpose: `docx`, `pdf`, `pptx` and `xlsx` have a proprietary "al
 Secrets: API keys go only in a local `.env` file, which `.gitignore` blocks. `.env.example` lists the variable names with empty values.
 
 Third party skill added: `skills_external/dashboard-design` from `abdiraimov-otabek/dashboard-design-skill` (commit b813324), kept with its own LICENSE. It is a design guide with no scripts.
+
+Plot skills: `skills/interactive-scientific-plots` (written from this project: how to add interactive, customizable plots without changing any computed number) and `skills_external/k_dense_scientific_skills` (`scientific-visualization`, `matplotlib`, `seaborn` from `K-Dense-AI/scientific-agent-skills`, MIT).

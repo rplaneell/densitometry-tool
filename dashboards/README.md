@@ -1,17 +1,13 @@
-# Gel densitometry dashboard: three design versions
+# Gel densitometry dashboard: customizable version
 
-All three are the same page with a design layer added on top. The page's own scripts are byte identical to the original (checked automatically), its visible text and chart markup are unchanged, and nothing scientific is recalculated.
+`proteinquant_customizable.html` is the original page with a design layer added on top. The page's own scripts are byte identical to the original (checked on every build), its visible text and chart markup are unchanged, and nothing scientific is recalculated. `proteinquant_ORIGINAL_untouched.html` is the file exactly as received.
 
-| File | Character |
-|---|---|
-| `proteinquant_1_SAFE.html` | Calm by default, sapphire and ocean blue with one neon jade accent, compact hero, left step rail on wide screens |
-| `proteinquant_2_CRAZY.html` | Bold type, hard offset shadows, moving ticker, motion on |
-| `proteinquant_3_SUPER_CRAZY.html` | Ink black neon zine: scan lines, glowing shadows, wobbling buttons, neon cursor ring |
-| `proteinquant_ORIGINAL_untouched.html` | The file exactly as received |
+## What was added
+- **One palette** (sapphire, ocean blue, neon jade, with amber reserved for samples and warnings). Every legacy colour in the page's stylesheet and drawn charts is mapped to colour tokens, so a theme change recolours everything.
+- **Calm by default** (the page's own calm mode), compact intro, left step menu on wide screens, wider content, J and K keys to move between sections, `?` for help, `C` for Customize.
+- **Interactive explorer** under the results (step 4), built with Apache ECharts 5.5.1 inlined unmodified (licence in `third_party/`). Read only: it reads `window.__state` and the page's own results table. Hover shows the page's own formatted numbers, wheel or drag zooms, standard curve view included.
+- **Customize panel** (button in the top bar): colour theme (sapphire and jade, ocean and coral, slate and teal, graphite for print, colour blind safe), accent colour, text size, spacing, heading font, corner shape, contrast, step menu position, intro size, motion, and plot options (bars or dots, value labels, grid, mark size, label size, 95 % range, sort, log axis, palette). Export, import and reset settings. Nothing is stored in the browser unless "Remember on this device" is ticked.
 
-Shared in all three: one palette (sapphire, ocean blue, neon jade, plus amber reserved for samples and warnings; every legacy colour in the page's stylesheet and drawn charts is mapped to it), and the **Interactive explorer** panel under the results (step 4).
+Tested on the page's built in simulated gels: every plotted value, range, control point and the fitted curve equals the page's numbers exactly, after every setting change.
 
-## Interactive explorer
-Built with Apache ECharts 5.5.1, inlined unmodified (licence in `third_party/`). It is read only: it reads `window.__state` and the page's own results table and calculates nothing. Hover shows the page's own formatted numbers; wheel or drag zooms; sort, 95 % range, log axis, three palettes (blue and jade, colour blind safe, greyscale for print), reset zoom, save image. Hidden in print. Tested on the page's built in simulated gels: all plotted values, ranges, control points and the fitted curve equal the page's numbers exactly.
-
-`layer_sources/` holds the injected sources and `build.py`, which assembles each version from the original file.
+`layer_sources/` holds the injected sources and `build.py`, which assembles the page from the original file.
