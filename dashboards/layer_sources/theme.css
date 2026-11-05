@@ -57,7 +57,7 @@ table tbody tr:hover{background:var(--blue100)}
 
 /*STRUCTURE-START layout redesign: compact hero, left rail, wider content, tighter rhythm. No content moved.*/
 .hero{min-height:0!important;padding:0}
-.hero > .wrap{padding-top:36px;padding-bottom:44px}
+.hero > .wrap{padding-top:36px;padding-bottom:84px}
 .hero h1{font-size:clamp(28px,3.1vw,42px)}
 .hero .lead{font-size:14.5px;line-height:1.65;max-width:60ch}
 .hero-visual{zoom:.82}
@@ -67,7 +67,7 @@ main > section{padding:60px 0}
 @media (min-width:1500px){
   html:not([data-pl-nav="top"]) .site-header .wrap{height:56px}
   html:not([data-pl-nav="top"]) .site-header .brand-logo{height:36px;width:auto}
-  html:not([data-pl-nav="top"]) .wrap{max-width:1640px;margin-left:max(236px,calc((100vw - 1640px)/2 + 110px));margin-right:28px}
+  html:not([data-pl-nav="top"]) .wrap{max-width:1640px;margin-left:max(236px,calc((100% - 1640px)/2 + 110px));margin-right:28px}
   html:not([data-pl-nav="top"]) .site-header nav{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:35;width:190px}
   html:not([data-pl-nav="top"]) .site-header .stepnav{display:flex;flex-direction:column;align-items:stretch;gap:2px;height:auto;padding:8px;background:#fff;border:1px solid var(--g200);border-radius:var(--r-md);box-shadow:var(--shadow);list-style:none;margin:0}
   html:not([data-pl-nav="top"]) .site-header .stepnav li{height:auto}

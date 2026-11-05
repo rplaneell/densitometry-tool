@@ -11,3 +11,6 @@
 Tested on the page's built in simulated gels: every plotted value, range, control point and the fitted curve equals the page's numbers exactly, after every setting change.
 
 `layer_sources/` holds the injected sources and `build.py`, which assembles the page from the original file.
+
+## Visual direction (current default theme: Hydrophobic glass)
+Inspired by two reference images of water shaped glass molecules and a glass sphere in a sphere. Deep steel blue scene, content on frosted glass slabs, the gel inside a glass sphere, fine water droplets, one ice cyan accent, sharp and scaled for 4K. Full notes in `../docs/DESIGN_DIRECTION_HYDROPHOBIC_GLASS.md`. The earlier sapphire and jade, ocean, slate, graphite and colour blind safe themes remain in the Customize panel.

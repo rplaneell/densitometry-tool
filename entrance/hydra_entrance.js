@@ -223,7 +223,8 @@
     function byDepth(a, b) { return depth[a] - depth[b]; }
 
     function resize() {
-      dpr = Math.min(root.devicePixelRatio || 1, 2); W = Math.max(2, Math.round(rootEl.clientWidth * dpr)); H = Math.max(2, Math.round(rootEl.clientHeight * dpr));
+      dpr = Math.min(root.devicePixelRatio || 1, 2, Math.sqrt(8.3e6 / (rootEl.clientWidth * rootEl.clientHeight))); // sharp on 4K, capped near 8 megapixels
+      W = Math.max(2, Math.round(rootEl.clientWidth * dpr)); H = Math.max(2, Math.round(rootEl.clientHeight * dpr));
       canvas.width = W; canvas.height = H;
       var worldH = 2 * ZF * Math.tan(FOV / 2); pxPerUnit = rootEl.clientHeight / worldH;
       var lw = LW * pxPerUnit; logoEl.style.width = lw + 'px'; logoEl.style.height = lw + 'px'; logoEl.style.marginLeft = -lw / 2 + 'px'; logoEl.style.marginTop = -lw / 2 + 'px';

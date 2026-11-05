@@ -48,7 +48,7 @@ def build(out, extra_css='', extra_js='', calm=True):
 
 def build_all():
     R=ROOT+'trial/'
-    build(R+'v_custom.html', extra_css=open(R+'custom.css').read(), extra_js=open(R+'custom.js').read())
+    build(R+'v_custom.html', extra_css=open(R+'custom.css').read()+open(R+'glass.css').read(), extra_js=open(R+'glass.js').read()+'\n'+open(R+'custom.js').read())
 
 if __name__=='__main__':
     build_all()

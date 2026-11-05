@@ -41,6 +41,10 @@ f. **Colours.** Run `python port_kit/tools/colour_audit.py . --palette port_kit/
 g. **Languages, print and export.** Is there more than one language? Print or PDF export? Excel or CSV export? Keep all of them working.
 h. **Brand.** Is there a logo, brand colour or style guide I must respect? If yes, keep it and ask before changing it.
 
+## 2b. Visual direction (from the reference images)
+
+Read `docs/DESIGN_DIRECTION_HYDROPHOBIC_GLASS.md` first. In one line: a deep steel blue water scene, content on frosted glass slabs (data stays on a light surface), a glass sphere around the hero visual, fine water droplets, one loud ice cyan accent used once per screen, razor sharp and well scaled on 4K screens. Professional and intuitive first, cool second. The reference layer is in `port_kit/layer/` (`glass.css`, `glass.js`).
+
 ## 3. Baseline (before the first edit)
 
 - Create the branch: `git checkout -b design-layer`.
@@ -77,7 +81,7 @@ Always feed charts from the already computed object. Never call the fitting or s
    - Single HTML: `python port_kit/tools/integrity_check.py html --original dashboard_original.html --built <new file> --ignore-id ...` (ignore the layer's own element ids)
 2. **Colours consistent.** Run the colour audit on the result. Remaining hard coded colours must be listed and justified (for example third party code).
 3. **Plots equal the numbers.** Copy and adapt `port_kit/tools/configs/fidelity.example.json` (the example data steps and the two JavaScript expressions that return what is plotted and what the dashboard computed). Run `python port_kit/tools/fidelity_test.py <config>`. It must say ALL EQUAL, also after the setting changes.
-4. **Quality.** Adapt `port_kit/tools/configs/qa.example.json` and run `python port_kit/tools/qa_check.py <config>`. It must say ALL PASS: no sideways scroll on a phone, no console errors, no endless animation by default or with reduced motion, text contrast at least 4.5, visible keyboard focus, the layer hidden in print.
+4. **Quality.** Adapt `port_kit/tools/configs/qa.example.json` and run `python port_kit/tools/qa_check.py <config>`. It must say ALL PASS: no sideways scroll on a phone, no console errors, no endless animation by default or with reduced motion, text contrast at least 4.5 (measured on the real pixels behind the text, so gradients and glass are handled) plus every button on the page readable, visible keyboard focus, the layer hidden in print. Also look at the page at 3840 by 2160 and at 1920 by 1080 on a double density screen: it must stay sharp and well proportioned.
 5. **Exports still work.** Print or PDF, CSV and Excel (if present) still produce the same numbers as before.
 6. **Look at the screenshots yourself.** Compare against the baseline screenshots at 1600 and 390 px, and fix anything that looks broken. Wait for scrolling to settle before judging a screenshot.
 

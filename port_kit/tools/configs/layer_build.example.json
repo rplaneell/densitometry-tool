@@ -77,7 +77,8 @@
     "../../layer/usability.css",
     "../../layer/theme_and_structure.css",
     "../../layer/explorer.css",
-    "../../layer/customize_panel.css"
+    "../../layer/customize_panel.css",
+    "../../layer/glass.css"
   ],
   "js_libs": [
     {
@@ -88,6 +89,7 @@
   "js": [
     "../../layer/usability.js",
     "../../layer/explorer.js",
+    "../../layer/glass.js",
     "../../layer/customize_panel.js"
   ]
 }

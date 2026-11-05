@@ -22,6 +22,10 @@
     "primary button": [
       ".btn",
       4.5
+    ],
+    "section label (small text)": [
+      "main section .sec-head p",
+      4.5
     ]
   },
   "print_hidden": [
@@ -30,5 +34,18 @@
     "#pl-explore",
     "#pl-cust"
   ],
-  "steps": []
+  "steps": [
+    {
+      "select": "#example",
+      "value": "control",
+      "then_wait": 900
+    },
+    {
+      "select": "#example",
+      "value": "sample",
+      "then_wait": 1500
+    }
+  ],
+  "all_buttons_contrast": true,
+  "button_min": 3.0
 }

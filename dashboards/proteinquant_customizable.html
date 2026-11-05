@@ -1429,7 +1429,7 @@ table tbody tr:hover{background:var(--blue100)}
 
 /*STRUCTURE-START layout redesign: compact hero, left rail, wider content, tighter rhythm. No content moved.*/
 .hero{min-height:0!important;padding:0}
-.hero > .wrap{padding-top:36px;padding-bottom:44px}
+.hero > .wrap{padding-top:36px;padding-bottom:84px}
 .hero h1{font-size:clamp(28px,3.1vw,42px)}
 .hero .lead{font-size:14.5px;line-height:1.65;max-width:60ch}
 .hero-visual{zoom:.82}
@@ -1439,7 +1439,7 @@ main > section{padding:60px 0}
 @media (min-width:1500px){
   html:not([data-pl-nav="top"]) .site-header .wrap{height:56px}
   html:not([data-pl-nav="top"]) .site-header .brand-logo{height:36px;width:auto}
-  html:not([data-pl-nav="top"]) .wrap{max-width:1640px;margin-left:max(236px,calc((100vw - 1640px)/2 + 110px));margin-right:28px}
+  html:not([data-pl-nav="top"]) .wrap{max-width:1640px;margin-left:max(236px,calc((100% - 1640px)/2 + 110px));margin-right:28px}
   html:not([data-pl-nav="top"]) .site-header nav{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:35;width:190px}
   html:not([data-pl-nav="top"]) .site-header .stepnav{display:flex;flex-direction:column;align-items:stretch;gap:2px;height:auto;padding:8px;background:#fff;border:1px solid var(--g200);border-radius:var(--r-md);box-shadow:var(--shadow);list-style:none;margin:0}
   html:not([data-pl-nav="top"]) .site-header .stepnav li{height:auto}
@@ -1513,6 +1513,70 @@ html[data-pl-hero=hidden] .hero{display:none!important}
 html[data-pl-contrast=high] .card,html[data-pl-contrast=high] #pl-explore{border-width:2px}
 html[data-pl-contrast=high] body{color:#0F1822}
 /*CUSTOM-END*/
+/*GLASS-START hydrophobic liquid glass: a deep blue water scene, with content on frosted glass slabs*/
+html[data-pl-style=glass]{color-scheme:dark;background:
+  radial-gradient(1500px 850px at 80% 4%,rgba(125,178,232,.50),transparent 62%),
+  radial-gradient(1100px 760px at 4% 98%,rgba(46,98,158,.44),transparent 64%),
+  linear-gradient(162deg,#050B16 0%,#0A1B33 36%,#173F69 70%,#3C75A6 100%) fixed}
+html[data-pl-style=glass] body{background:transparent;color:var(--g700)}
+/* fine grain: stops gradient banding on large, high resolution screens */
+html[data-pl-style=glass]::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+#pl-drops{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+html:not([data-pl-style=glass]) #pl-drops{display:none}
+/* chrome: dark glass */
+html[data-pl-style=glass] .utilbar{background:rgba(3,9,19,.92)}
+html[data-pl-style=glass] .site-header{background:linear-gradient(180deg,rgba(6,16,32,.9),rgba(8,22,42,.82));border-bottom:1px solid rgba(190,225,255,.22);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 14px 40px rgba(2,8,20,.35)}
+html[data-pl-style=glass] .site-header .brand-logo{filter:invert(1) grayscale(1) contrast(1.2);mix-blend-mode:screen;opacity:.95}
+html[data-pl-style=glass] .stepnav a{color:#D5E6F6}
+html[data-pl-style=glass] .stepnav a .k{color:var(--jade)}
+html[data-pl-style=glass] .stepnav a:hover{background:rgba(190,225,255,.12)!important}
+html[data-pl-style=glass] .stepnav a.on{background:rgba(190,225,255,.16)!important;color:#fff}
+html[data-pl-style=glass] .stepnav a.on .k{background:var(--jade);color:#04152F}
+html[data-pl-style=glass] .site-header .stepnav{background:linear-gradient(165deg,rgba(14,34,62,.86),rgba(8,20,38,.9))!important;border:1px solid rgba(190,225,255,.26)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 24px 60px rgba(2,8,20,.5)!important;border-radius:22px!important}
+/* hero: a glass sphere around the simulated gel, like the sphere inside a sphere */
+html[data-pl-style=glass] .hero{background:linear-gradient(180deg,rgba(3,9,19,.55),rgba(3,9,19,.15))!important}
+html[data-pl-style=glass] .hero::before{background:linear-gradient(90deg,rgba(4,11,22,.72) 0%,rgba(4,11,22,.4) 50%,transparent 85%)!important}
+html[data-pl-style=glass] .hero-visual{position:relative}
+html[data-pl-style=glass] .hero-visual > *{position:relative;z-index:1}
+html[data-pl-style=glass] .hero-visual::before{content:"";position:absolute;inset:-64px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 31% 21%,rgba(255,255,255,.55) 0,rgba(255,255,255,.12) 6%,transparent 15%),
+  radial-gradient(circle at 50% 50%,transparent 61%,rgba(150,205,250,.2) 69%,rgba(255,255,255,.5) 72%,rgba(150,205,250,.16) 75%,transparent 79%),
+  radial-gradient(circle at 50% 50%,rgba(90,150,215,.14),rgba(90,150,215,.04) 60%,transparent 66%);
+  box-shadow:inset 0 0 70px rgba(150,205,255,.2),0 0 90px rgba(80,140,210,.2)}
+html[data-pl-style=glass] .hero-visual::after{content:"";position:absolute;inset:-64px;border-radius:50%;pointer-events:none;z-index:2;
+  background:conic-gradient(from 205deg,rgba(255,255,255,.85),rgba(255,255,255,0) 16%,rgba(255,255,255,0) 66%,rgba(190,225,255,.35) 84%,rgba(255,255,255,.85));
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px))}
+/* content: frosted glass slabs floating over the water, with water beads and a soft sheen */
+html[data-pl-style=glass] main > section{--bandbg:transparent;position:relative;clip-path:none;margin:28px 0;padding:60px 52px;border-radius:30px;border:1px solid rgba(255,255,255,.55);
+  background:linear-gradient(158deg,rgba(255,255,255,calc(var(--glass-alpha,.88) + .05)),rgba(231,242,251,var(--glass-alpha,.88)));
+  -webkit-backdrop-filter:blur(var(--glass-blur,16px)) saturate(1.35);backdrop-filter:blur(var(--glass-blur,16px)) saturate(1.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(150,190,225,.35),0 34px 80px rgba(2,8,20,.5),0 2px 6px rgba(2,8,20,.25)}
+html[data-pl-style=glass] main > section::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(118deg,rgba(255,255,255,.65) 0,rgba(255,255,255,0) 30%);opacity:.55;z-index:0}
+html[data-pl-style=glass] main > section::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 97% 7%,#fff 0 1.5px,rgba(120,170,215,.35) 2.5px 5px,rgba(255,255,255,.55) 5.5px 6.5px,transparent 7.5px),
+  radial-gradient(circle at 94% 12%,#fff 0 1px,rgba(120,170,215,.3) 2px 3.5px,transparent 4.5px),
+  radial-gradient(circle at 3.5% 93%,#fff 0 2px,rgba(120,170,215,.35) 3px 7px,rgba(255,255,255,.5) 7.5px 8.5px,transparent 9.5px),
+  radial-gradient(circle at 6.5% 96.5%,#fff 0 1px,rgba(120,170,215,.3) 2px 4px,transparent 5px),
+  radial-gradient(circle at 61% 2.5%,#fff 0 1px,rgba(120,170,215,.3) 2px 3.5px,transparent 4.5px)}
+html[data-pl-style=glass] main > section > *{position:relative;z-index:1}
+html[data-pl-style=glass] .howto-band{background:linear-gradient(158deg,rgba(255,255,255,.9),rgba(231,242,251,.86));border-color:rgba(255,255,255,.5)}
+html[data-pl-style=glass] .card,html[data-pl-style=glass] #pl-explore,html[data-pl-style=glass] .defs > div{background:linear-gradient(165deg,rgba(255,255,255,.92),rgba(238,246,252,.78));border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 #fff,0 14px 34px rgba(8,30,60,.14)}
+html[data-pl-style=glass] .defs > div{border-top:3px solid var(--werfen)}
+html[data-pl-style=glass] .defs > div.t-mock{border-top-color:var(--g500)}
+html[data-pl-style=glass] .defs > div.t-sample{border-top-color:var(--orange)}
+html[data-pl-style=glass] .btn:not(.ghost):not(.outline):not(.amber){background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,0) 55%),var(--werfen);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 8px 20px rgba(8,30,60,.28);border-color:rgba(255,255,255,.25)}
+html[data-pl-style=glass] .btn.ghost{background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(236,245,252,.8));color:var(--werfen);border:1px solid rgba(13,43,78,.3);box-shadow:inset 0 1px 0 #fff,0 6px 16px rgba(8,30,60,.12)}
+html[data-pl-style=glass] .btn.ghost:hover{background:#fff;border-color:var(--blue500)}
+html[data-pl-style=glass] .btn.amber{background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0) 55%),var(--orange);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 8px 20px rgba(60,30,0,.3);border-color:rgba(255,255,255,.3)}
+html[data-pl-style=glass] .hero .btn.hero-cta:first-of-type:not(.ghost):not(.outline):not(.amber){background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0) 60%),var(--jade);color:#04152F;border-color:rgba(255,255,255,.55)}
+html[data-pl-style=glass] #pl-cust{background:linear-gradient(165deg,rgba(255,255,255,.99),rgba(233,243,252,.98));-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+html[data-pl-style=glass] footer{background:rgba(3,9,19,.9)!important}
+@media (max-width:700px){html[data-pl-style=glass] main > section{padding:34px 20px;border-radius:22px;margin:18px 0}}
+@media print{html[data-pl-style=glass]{background:#fff!important}#pl-drops{display:none!important}html[data-pl-style=glass] main > section{background:#fff!important;box-shadow:none!important;backdrop-filter:none!important;border:0!important}}
+/*GLASS-END*/
+html[data-pl-style=glass] main > section .sec-head h2{font-size:clamp(26px,2vw,32px);line-height:1.12}
+@media (min-width:2200px){html[data-pl-style=glass] main > section .sec-head h2{font-size:26px}}
 </style>
 <script>/*POLISH calm by default: uses the page's own calm mode; the Animations switch turns motion back on*/try{document.documentElement.classList.add('pq-calm')}catch(e){}</script>
 </head>
@@ -7368,10 +7432,48 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
 /*EXPLORE-END*/
 </script>
 <script>
+/*GLASS-JS water droplets on the glass scene: decoration only. Static when motion is calm or reduced.*/
+(function () {
+  try {
+    var d = document, cv = d.createElement('canvas'); cv.id = 'pl-drops'; cv.setAttribute('aria-hidden', 'true');
+    d.body.insertBefore(cv, d.body.firstChild);
+    var ctx = cv.getContext('2d'), W = 0, H = 0, dpr = 1, drops = [], on = false, anim = false, raf = 0, last = 0;
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function rng(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+    function size() {
+      var cw = window.innerWidth, ch = window.innerHeight;
+      dpr = Math.min(window.devicePixelRatio || 1, 2, Math.sqrt(8.3e6 / (cw * ch))); // sharp on 4K, never more than about 8 megapixels
+      W = cv.width = Math.round(cw * dpr); H = cv.height = Math.round(ch * dpr); seed(cw, ch);
+    }
+    function seed(cw, ch) {
+      var r = rng(7), n = Math.round(cw * ch / 36000); drops = [];
+      for (var i = 0; i < n; i++) { var s = 1.6 + Math.pow(r(), 3.4) * 24; drops.push({ x: r() * cw, y: r() * ch, s: s, v: (0.5 + r() * 1.1) * (0.35 + s / 26), a: 0.35 + r() * 0.65 }); }
+    }
+    function drop(p) {
+      var x = p.x, y = p.y, s = p.s, g = ctx.createRadialGradient(x - s * 0.3, y - s * 0.34, s * 0.04, x, y, s);
+      g.addColorStop(0, 'rgba(255,255,255,' + 0.55 * p.a + ')'); g.addColorStop(0.2, 'rgba(190,225,250,' + 0.22 * p.a + ')');
+      g.addColorStop(0.72, 'rgba(70,130,190,' + 0.12 * p.a + ')'); g.addColorStop(1, 'rgba(205,232,255,' + 0.34 * p.a + ')');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, s, 0, 6.2832); ctx.fill();
+      ctx.fillStyle = 'rgba(255,255,255,' + 0.9 * p.a + ')'; ctx.beginPath(); ctx.arc(x - s * 0.32, y - s * 0.36, Math.max(0.6, s * 0.13), 0, 6.2832); ctx.fill();
+    }
+    function paint() { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, W, H); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); if (on) for (var i = 0; i < drops.length; i++) drop(drops[i]); }
+    function tick(now) {
+      raf = 0; if (!on || !anim || reduce || document.hidden) return;
+      if (now - last > 33) { var dt = Math.min(0.1, (now - last) / 1000); last = now; var ch = window.innerHeight, cw = window.innerWidth;
+        for (var i = 0; i < drops.length; i++) { var p = drops[i]; p.y -= p.v * dt * 6; if (p.y < -p.s) { p.y = ch + p.s; p.x = Math.random() * cw; } } paint(); }
+      raf = requestAnimationFrame(tick);
+    }
+    window.__plGlass = { set: function (o) { on = !!o.on; anim = !!o.anim; cv.style.display = on ? '' : 'none'; if (on && !W) size(); paint(); if (on && anim && !raf && !reduce) { last = performance.now(); raf = requestAnimationFrame(tick); } } };
+    var rt = 0; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (on) { size(); paint(); } }, 150); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden && on && anim && !raf && !reduce) { last = performance.now(); raf = requestAnimationFrame(tick); } });
+  } catch (e) { }
+})();
+
 /*CUSTOM-START customize panel: appearance and plot settings only. Reads and writes no scientific values.*/
 (function(){try{
   var d=document,root=d.documentElement;
   var TH={
+    glass:{n:'Hydrophobic glass',st:'glass',c:['#0D2B4E','#3F7DB3','#63DDF5'],v:{'--werfen':'#0D2B4E','--werfen-deep':'#06121F','--blue500':'#2C6397','--blue300':'#A9CCE8','--blue100':'#E6F0F8','--jade':'#63DDF5','--on-accent':'#04152F','--g050':'#EEF3F8','--g200':'#C9D8E6','--g500':'#42566B','--g700':'#1C3045','--orange':'#B25400','--orange-deep':'#8A4000','--orange-tint':'#FDF1E4','--teal':'#17707F','--page':'#0A1A2E','--hero':'#06121F'}},
     sapphire:{n:'Sapphire and jade',c:['#0A2463','#1B6CA8','#00E5A0'],v:{'--werfen':'#0A2463','--werfen-deep':'#061744','--blue500':'#1B6CA8','--blue300':'#A9CBE8','--blue100':'#E6F0F8','--jade':'#00E5A0','--on-accent':'#04152F','--g050':'#EEF3F8','--g200':'#D8E1EB','--g500':'#5A6A7C','--g700':'#33414F','--orange':'#C25E00','--orange-deep':'#8F4400','--orange-tint':'#FDF1E4','--teal':'#0B7A5C','--page':'#F4F7FA','--hero':'#061744'}},
     ocean:{n:'Ocean and coral',c:['#0B4F6C','#1B8FB5','#FF6B5E'],v:{'--werfen':'#0B4F6C','--werfen-deep':'#073549','--blue500':'#1B8FB5','--blue300':'#A8DCEB','--blue100':'#E3F4F9','--jade':'#FF6B5E','--on-accent':'#2A0A07','--g050':'#EDF5F8','--g200':'#D5E4EA','--g500':'#56707B','--g700':'#2F4650','--orange':'#B8650A','--orange-deep':'#864A06','--orange-tint':'#FCF0E2','--teal':'#0B7A5C','--page':'#F3F8FA','--hero':'#073549'}},
     slate:{n:'Slate and teal',c:['#243447','#4B6A88','#00B8A9'],v:{'--werfen':'#243447','--werfen-deep':'#16202C','--blue500':'#4B6A88','--blue300':'#B8C7D6','--blue100':'#E9EEF3','--jade':'#00B8A9','--on-accent':'#04201D','--g050':'#F0F2F5','--g200':'#DADFE5','--g500':'#5F6B78','--g700':'#363F4A','--orange':'#C25E00','--orange-deep':'#8F4400','--orange-tint':'#FDF1E4','--teal':'#0B7A5C','--page':'#F5F6F8','--hero':'#16202C'}},
@@ -7380,13 +7482,14 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
   };
   var ACC=['#00E5A0','#FF6B5E','#FFC857','#7C5CFF','#00B8D9','#E91E8C'];
   var HIGH={'--g500':'#2F3B4A','--g700':'#0F1822','--g200':'#8795A6'};
-  var DEF={theme:'sapphire',accent:'',zoom:100,density:'comfy',heading:'serif',corners:'soft',contrast:'normal',nav:'auto',hero:'compact',motion:'calm',type:'bars',labels:false,grid:true,thick:14,fs:12,range:true,sort:'value',pal:'theme',log:false,remember:false};
+  var DEF={theme:'glass',glass:50,droplets:true,autoscale:true,accent:'',zoom:100,density:'comfy',heading:'serif',corners:'soft',contrast:'normal',nav:'auto',hero:'compact',motion:'calm',type:'bars',labels:false,grid:true,thick:14,fs:12,range:true,sort:'value',pal:'theme',log:false,remember:false};
   var S=JSON.parse(JSON.stringify(DEF)),KEY='pl-custom-v1';
-  var TXT={en:{btn:'Customize',title:'Customize',sub:'Changes apply at once. They only affect how the page looks, never the results.',look:'Look',theme:'Colour theme',accent:'Accent colour',accentDef:'Theme default',size:'Text size',density:'Spacing',dC:'Compact',dN:'Comfortable',dR:'Roomy',heading:'Headings',hS:'Serif',hSa:'Sans',corners:'Corners',cSh:'Sharp',cSo:'Soft',cRo:'Round',contrast:'Contrast',cN:'Normal',cH:'High',layout:'Layout',nav:'Step menu',nA:'Side rail on wide screens',nT:'Top bar',hero:'Intro banner',hC:'Compact',hF:'Full',hH:'Hidden',motion:'Motion',mC:'Calm',mL:'Lively',plots:'Plots',type:'Chart type',tB:'Bars',tD:'Dots',labels:'Value labels',grid:'Grid lines',thick:'Mark size',fs:'Label size',range:'Show 95 % range',sort:'Sort samples',sV:'by value',sL:'by lane',sN:'by name',pal:'Plot palette',pT:'Follow page theme',pC:'Colour blind safe',pG:'Greyscale',log:'Log axis',save:'Save',remember:'Remember on this device',rememberNote:'Off by default: the page keeps nothing in the browser unless you tick this.',exp:'Export settings',imp:'Import settings',reset:'Reset all',close:'Close'},
-    ca:{btn:'Personalitza',title:'Personalitza',sub:'Els canvis s’apliquen a l’instant. Només afecten l’aspecte de la pàgina, mai els resultats.',look:'Aspecte',theme:'Tema de colors',accent:'Color d’accent',accentDef:'El del tema',size:'Mida del text',density:'Espaiat',dC:'Compacte',dN:'Còmode',dR:'Ampli',heading:'Títols',hS:'Serif',hSa:'Sense serif',corners:'Cantonades',cSh:'Rectes',cSo:'Suaus',cRo:'Rodones',contrast:'Contrast',cN:'Normal',cH:'Alt',layout:'Disposició',nav:'Menú dels passos',nA:'Barra lateral en pantalles amples',nT:'Barra superior',hero:'Bàner d’introducció',hC:'Compacte',hF:'Complet',hH:'Amagat',motion:'Moviment',mC:'Tranquil',mL:'Animat',plots:'Gràfics',type:'Tipus de gràfic',tB:'Barres',tD:'Punts',labels:'Etiquetes de valor',grid:'Línies de quadrícula',thick:'Mida dels elements',fs:'Mida de les etiquetes',range:'Mostra l’interval del 95 %',sort:'Ordena les mostres',sV:'per valor',sL:'per carril',sN:'per nom',pal:'Paleta dels gràfics',pT:'Segueix el tema',pC:'Apta per a daltònics',pG:'Escala de grisos',log:'Eix logarítmic',save:'Desa',remember:'Recorda en aquest dispositiu',rememberNote:'Desactivat per defecte: la pàgina no desa res al navegador si no ho marques.',exp:'Exporta la configuració',imp:'Importa la configuració',reset:'Restableix-ho tot',close:'Tanca'}};
+  var TXT={en:{btn:'Customize',title:'Customize',sub:'Changes apply at once. They only affect how the page looks, never the results.',look:'Look',theme:'Colour theme',accent:'Accent colour',accentDef:'Theme default',size:'Text size',density:'Spacing',dC:'Compact',dN:'Comfortable',dR:'Roomy',glassG:'Glass',glassI:'Glass intensity',drops:'Water droplets',auto4k:'Scale up on 4K screens',heading:'Headings',hS:'Serif',hSa:'Sans',corners:'Corners',cSh:'Sharp',cSo:'Soft',cRo:'Round',contrast:'Contrast',cN:'Normal',cH:'High',layout:'Layout',nav:'Step menu',nA:'Side rail on wide screens',nT:'Top bar',hero:'Intro banner',hC:'Compact',hF:'Full',hH:'Hidden',motion:'Motion',mC:'Calm',mL:'Lively',plots:'Plots',type:'Chart type',tB:'Bars',tD:'Dots',labels:'Value labels',grid:'Grid lines',thick:'Mark size',fs:'Label size',range:'Show 95 % range',sort:'Sort samples',sV:'by value',sL:'by lane',sN:'by name',pal:'Plot palette',pT:'Follow page theme',pC:'Colour blind safe',pG:'Greyscale',log:'Log axis',save:'Save',remember:'Remember on this device',rememberNote:'Off by default: the page keeps nothing in the browser unless you tick this.',exp:'Export settings',imp:'Import settings',reset:'Reset all',close:'Close'},
+    ca:{btn:'Personalitza',title:'Personalitza',sub:'Els canvis s’apliquen a l’instant. Només afecten l’aspecte de la pàgina, mai els resultats.',look:'Aspecte',theme:'Tema de colors',accent:'Color d’accent',accentDef:'El del tema',size:'Mida del text',density:'Espaiat',dC:'Compacte',dN:'Còmode',dR:'Ampli',glassG:'Vidre',glassI:'Intensitat del vidre',drops:'Gotetes d’aigua',auto4k:'Amplia en pantalles 4K',heading:'Títols',hS:'Serif',hSa:'Sense serif',corners:'Cantonades',cSh:'Rectes',cSo:'Suaus',cRo:'Rodones',contrast:'Contrast',cN:'Normal',cH:'Alt',layout:'Disposició',nav:'Menú dels passos',nA:'Barra lateral en pantalles amples',nT:'Barra superior',hero:'Bàner d’introducció',hC:'Compacte',hF:'Complet',hH:'Amagat',motion:'Moviment',mC:'Tranquil',mL:'Animat',plots:'Gràfics',type:'Tipus de gràfic',tB:'Barres',tD:'Punts',labels:'Etiquetes de valor',grid:'Línies de quadrícula',thick:'Mida dels elements',fs:'Mida de les etiquetes',range:'Mostra l’interval del 95 %',sort:'Ordena les mostres',sV:'per valor',sL:'per carril',sN:'per nom',pal:'Paleta dels gràfics',pT:'Segueix el tema',pC:'Apta per a daltònics',pG:'Escala de grisos',log:'Eix logarítmic',save:'Desa',remember:'Recorda en aquest dispositiu',rememberNote:'Desactivat per defecte: la pàgina no desa res al navegador si no ho marques.',exp:'Exporta la configuració',imp:'Importa la configuració',reset:'Restableix-ho tot',close:'Tanca'}};
   function lang(){return(window.i18n&&window.i18n.lang==='ca')?'ca':'en'}
   function t(k){return TXT[lang()][k]||TXT.en[k]||k}
   function lum(h){var m=/^#?([0-9a-f]{6})$/i.exec(h);if(!m)return 0;var n=parseInt(m[1],16),f=function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(n>>16&255)+.7152*f(n>>8&255)+.0722*f(n&255)}
+  function autoScale(){var w=Math.max(screen.width||0,window.innerWidth);return w>=3400?1.75:w>=2800?1.45:w>=2200?1.2:1}
   var applied=[];
   function apply(){
     applied.forEach(function(k){root.style.removeProperty(k)});applied=[];
@@ -7394,8 +7497,11 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
     if(S.accent){v['--jade']=S.accent;v['--on-accent']=lum(S.accent)>.4?'#04152F':'#FFFFFF'}
     if(S.contrast==='high')Object.assign(v,HIGH);
     Object.keys(v).forEach(function(k){root.style.setProperty(k,v[k]);applied.push(k)});
+    var st=(TH[S.theme]||{}).st||'';if(st)root.dataset.plStyle=st;else delete root.dataset.plStyle;
+    var gi=S.glass==null?50:S.glass;root.style.setProperty('--glass-alpha',String((0.985-gi*0.0016).toFixed(3)));root.style.setProperty('--glass-blur',(6+gi*0.22).toFixed(1)+'px');applied.push('--glass-alpha','--glass-blur');
+    if(window.__plGlass)window.__plGlass.set({on:st==='glass'&&S.droplets,anim:S.motion==='lively'});
     root.dataset.plDensity=S.density;root.dataset.plHeading=S.heading;root.dataset.plCorners=S.corners;root.dataset.plContrast=S.contrast;root.dataset.plNav=S.nav;root.dataset.plHero=S.hero;
-    root.style.zoom=S.zoom===100?'':String(S.zoom/100);
+    var z=(S.autoscale?autoScale():1)*S.zoom/100;root.style.zoom=Math.abs(z-1)<.001?'':String(+z.toFixed(3));
     try{var calm=window.pqCalm&&window.pqCalm(),want=S.motion==='calm';
       if(typeof calm==='boolean'&&calm!==want){var ab=[].slice.call(d.querySelectorAll('.utilbar button')).filter(function(b){return/^(Animations|Animacions)/.test(b.textContent.trim())})[0];if(ab)ab.click()}}catch(e){}
     if(window.__plx){Object.assign(window.__plx.P,{type:S.type,labels:S.labels,grid:S.grid,thick:S.thick,fs:S.fs,range:S.range,sort:S.sort,pal:S.pal,log:S.log});window.__plx.refresh()}
@@ -7412,10 +7518,11 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
     h+='<fieldset><legend>'+t('look')+'</legend><div class="plr"><span class="pll">'+t('theme')+'</span>'+Object.keys(TH).map(function(k){var c=TH[k].c;return'<button type="button" class="plsw" data-k="theme" data-v="'+k+'" aria-pressed="'+(S.theme===k)+'" title="'+TH[k].n+'" aria-label="'+TH[k].n+'"><i style="background:'+c[0]+'"></i><i style="background:'+c[1]+'"></i><i style="background:'+c[2]+'"></i></button>'}).join('')+'</div>';
     h+='<div class="plr"><span class="pll">'+t('accent')+'</span>'+ACC.map(function(a){return'<button type="button" class="pldot" data-k="accent" data-v="'+a+'" style="background:'+a+'" aria-pressed="'+(S.accent===a)+'" aria-label="'+a+'"></button>'}).join('')+'<input type="color" data-color value="'+(S.accent||TH[S.theme].v['--jade'])+'" aria-label="'+t('accent')+'"><button type="button" class="pls" style="padding:5px 10px;border:1px solid var(--g200);background:#fff;cursor:pointer;font:600 12px var(--font)" data-k="accent" data-v="">'+t('accentDef')+'</button></div>';
     h+='<div class="plr"><span class="pll">'+t('size')+'</span><div class="pls" role="group">'+[90,100,110,125].map(function(z){return'<button type="button" data-k="zoom" data-v="'+z+'" aria-pressed="'+(S.zoom===z)+'">'+z+' %</button>'}).join('')+'</div></div>';
-    h+='<div class="plr"><span class="pll">'+t('density')+'</span>'+segc('density',[['compact','dC'],['comfy','dN'],['roomy','dR']])+'</div>';
+    h+=ck('autoscale','auto4k')+'<div class="plr"><span class="pll">'+t('density')+'</span>'+segc('density',[['compact','dC'],['comfy','dN'],['roomy','dR']])+'</div>';
     h+='<div class="plr"><span class="pll">'+t('heading')+'</span>'+segc('heading',[['serif','hS'],['sans','hSa']])+'</div>';
     h+='<div class="plr"><span class="pll">'+t('corners')+'</span>'+segc('corners',[['sharp','cSh'],['soft','cSo'],['round','cRo']])+'</div>';
     h+='<div class="plr"><span class="pll">'+t('contrast')+'</span>'+segc('contrast',[['normal','cN'],['high','cH']])+'</div></fieldset>';
+    if((TH[S.theme]||{}).st==='glass')h+='<fieldset><legend>'+t('glassG')+'</legend><div class="plr"><span class="pll">'+t('glassI')+'</span><input type="range" min="0" max="100" step="1" value="'+S.glass+'" data-r="glass" aria-label="'+t('glassI')+'"></div>'+ck('droplets','drops')+'</fieldset>';
     h+='<fieldset><legend>'+t('layout')+'</legend><div class="plr"><span class="pll">'+t('nav')+'</span>'+segc('nav',[['auto','nA'],['top','nT']])+'</div><div class="plr"><span class="pll">'+t('hero')+'</span>'+segc('hero',[['compact','hC'],['full','hF'],['hidden','hH']])+'</div><div class="plr"><span class="pll">'+t('motion')+'</span>'+segc('motion',[['calm','mC'],['lively','mL']])+'</div></fieldset>';
     h+='<fieldset><legend>'+t('plots')+'</legend><div class="plr"><span class="pll">'+t('type')+'</span>'+segc('type',[['bars','tB'],['dots','tD']])+'</div>'+ck('labels','labels')+ck('grid','grid')+ck('range','range')+ck('log','log')+
       '<div class="plr"><span class="pll">'+t('thick')+'</span><input type="range" min="8" max="26" step="1" value="'+S.thick+'" data-r="thick" aria-label="'+t('thick')+'"></div><div class="plr"><span class="pll">'+t('fs')+'</span><input type="range" min="10" max="16" step="1" value="'+S.fs+'" data-r="fs" aria-label="'+t('fs')+'"></div>'+
@@ -7455,7 +7562,7 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
     if(e.key==='c'||e.key==='C'){panel.classList.contains('open')?close():open();e.preventDefault()}});
   [].forEach.call(d.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){setTimeout(function(){if(btn)btn.querySelector('span').textContent=t('btn');if(panel.classList.contains('open'))render()},300)})});
   try{var dl=d.querySelector('#pl-help dl');if(dl)dl.insertAdjacentHTML('beforeend','<dt><kbd>C</kbd></dt><dd>Customize</dd>')}catch(e){}
-  setTimeout(apply,0);
+  apply();setTimeout(apply,0);window.addEventListener('resize',function(){var z=(S.autoscale?autoScale():1)*S.zoom/100;root.style.zoom=Math.abs(z-1)<.001?'':String(+z.toFixed(3))});
 }catch(e){}})();
 /*CUSTOM-END*/
 </script>
