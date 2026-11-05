@@ -1,13 +1,17 @@
-# Dashboard design trial
+# Gel densitometry dashboard: three design versions
 
-`proteinquant_polished_trial.html` is the gel densitometry page with a new visual layer added on top. Nothing scientific was changed: the visible text and the chart markup were compared with the original in a browser and are identical.
+All three are the same page with a design layer added on top. The page's own scripts are byte identical to the original (checked automatically), its visible text and chart markup are unchanged, and nothing scientific is recalculated.
 
-`polish_layer/` holds the three blocks that were injected (`theme.css` for colour, type and shape, `polish.css` and `polish.js` for usability). Removing them gives back the original file byte for byte.
+| File | Character |
+|---|---|
+| `proteinquant_1_SAFE.html` | Calm by default, sapphire and ocean blue with one neon jade accent, compact hero, left step rail on wide screens |
+| `proteinquant_2_CRAZY.html` | Bold type, hard offset shadows, moving ticker, motion on |
+| `proteinquant_3_SUPER_CRAZY.html` | Ink black neon zine: scan lines, glowing shadows, wobbling buttons, neon cursor ring |
+| `proteinquant_ORIGINAL_untouched.html` | The file exactly as received |
 
-`proteinquant_ORIGINAL_untouched.html` is the file exactly as received, kept for comparison.
+Shared in all three: one palette (sapphire, ocean blue, neon jade, plus amber reserved for samples and warnings; every legacy colour in the page's stylesheet and drawn charts is mapped to it), and the **Interactive explorer** panel under the results (step 4).
 
-The polished page starts in the page's own calm mode (no endless animations). The Animations switch in the top bar turns motion back on. In calm mode the hero's looping demo counter stays on its final value (27.4 mg/L) instead of cycling from 0.0.
+## Interactive explorer
+Built with Apache ECharts 5.5.1, inlined unmodified (licence in `third_party/`). It is read only: it reads `window.__state` and the page's own results table and calculates nothing. Hover shows the page's own formatted numbers; wheel or drag zooms; sort, 95 % range, log axis, three palettes (blue and jade, colour blind safe, greyscale for print), reset zoom, save image. Hidden in print. Tested on the page's built in simulated gels: all plotted values, ranges, control points and the fitted curve equal the page's numbers exactly.
 
-Palette (current): sapphire and ocean blue carry the page; neon jade is the single loud accent, used once per view (main button, status dot, reading progress line, heading underline). `polish_layer/theme_ponceau_wine_alternative.css` is the earlier wine and magenta variant.
-
-Structure (current): compact hero so the working area starts near the top; on screens 1500 px or wider the step menu becomes a left rail that stays in view; the content area widens with the screen; vertical spacing between sections is tighter. Layout changes only: no content was moved or removed.
+`layer_sources/` holds the injected sources and `build.py`, which assembles each version from the original file.

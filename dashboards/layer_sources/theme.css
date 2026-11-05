@@ -53,7 +53,6 @@ table tbody tr:hover{background:var(--blue100)}
 .hero-mesh,.live-dot::after,.hero-art .band,.hero-art .scan{animation:none!important}
 .hero-field{opacity:.35!important}
 .ribbon{display:none!important}
-.hero-visual svg{filter:hue-rotate(-14deg) saturate(.85)}
 
 /*STRUCTURE-START layout redesign: compact hero, left rail, wider content, tighter rhythm. No content moved.*/
 .hero{min-height:0!important;padding:0}
