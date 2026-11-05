@@ -1,0 +1,34 @@
+{
+  "url": "../../../dashboard_new.html",
+  "phone_width": 390,
+  "max_endless_default": 0,
+  "contrast": {
+    "hero lead text": [
+      ".hero .lead",
+      4.5
+    ],
+    "menu link": [
+      ".stepnav a .t",
+      4.5
+    ],
+    "section paragraph": [
+      "main section p",
+      4.5
+    ],
+    "section heading": [
+      "main section h2",
+      4.5
+    ],
+    "primary button": [
+      ".btn",
+      4.5
+    ]
+  },
+  "print_hidden": [
+    "#pl-progress",
+    "#pl-help",
+    "#pl-explore",
+    "#pl-cust"
+  ],
+  "steps": []
+}

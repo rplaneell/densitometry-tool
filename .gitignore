@@ -2,3 +2,8 @@
 .env
 .env.local
 .env.*.local
+
+# Python
+.venv/
+__pycache__/
+port_kit/vendor/

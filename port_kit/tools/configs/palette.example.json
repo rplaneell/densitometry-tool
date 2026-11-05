@@ -1,0 +1,10 @@
+{
+  "--primary": "#0A2463",
+  "--secondary": "#1B6CA8",
+  "--accent": "#00E5A0",
+  "--warn": "#C25E00",
+  "--ink": "#33414F",
+  "--muted": "#5A6A7C",
+  "--line": "#D8E1EB",
+  "--soft": "#EEF3F8"
+}

@@ -1,0 +1,93 @@
+{
+  "original": "../../../dashboard_original.html",
+  "output": "../../../dashboard_new.html",
+  "calm_by_default": true,
+  "calm_class": "pq-calm",
+  "hex_to_token": {
+    "06038E": "--werfen",
+    "04026B": "--werfen-deep",
+    "3A43C8": "--blue500",
+    "9DB0F2": "--blue300",
+    "E8EBFA": "--blue100",
+    "5F6B7A": "--g500",
+    "3F4854": "--g700",
+    "DDE2E9": "--g200",
+    "F4F6F9": "--g050",
+    "B24A00": "--orange",
+    "8F3B00": "--orange-deep",
+    "FBEFE6": "--orange-tint",
+    "0A6C8A": "--teal",
+    "0A0AA6": "--blue500",
+    "1A1EA0": "--blue500",
+    "12167F": "--werfen",
+    "0B0FA8": "--werfen",
+    "2A32D0": "--blue500",
+    "040369": "--werfen-deep",
+    "8C9AD1": "--blue300",
+    "8996CC": "--blue300",
+    "A5B1DC": "--blue300",
+    "B5C1EC": "--blue300",
+    "D3DBF6": "--blue100",
+    "F7F8FF": "--blue100",
+    "F27E28": "--orange",
+    "7A3300": "--orange-deep"
+  },
+  "token_literals": {
+    "--werfen": "0A2463",
+    "--werfen-deep": "061744",
+    "--blue500": "1B6CA8",
+    "--blue300": "A9CBE8",
+    "--blue100": "E6F0F8",
+    "--g500": "5A6A7C",
+    "--g700": "33414F",
+    "--g200": "D8E1EB",
+    "--g050": "EEF3F8",
+    "--orange": "C25E00",
+    "--orange-deep": "8F4400",
+    "--orange-tint": "FDF1E4",
+    "--teal": "0B7A5C"
+  },
+  "rgba_map": [
+    [
+      "6,3,142",
+      "10,36,99"
+    ],
+    [
+      "58,67,200",
+      "27,108,168"
+    ],
+    [
+      "157,176,242",
+      "169,203,232"
+    ],
+    [
+      "4,2,107",
+      "6,23,68"
+    ],
+    [
+      "2,1,60",
+      "3,12,38"
+    ],
+    [
+      "143,59,0",
+      "143,68,0"
+    ]
+  ],
+  "css": [
+    "../../layer/usability.css",
+    "../../layer/theme_and_structure.css",
+    "../../layer/explorer.css",
+    "../../layer/customize_panel.css"
+  ],
+  "js_libs": [
+    {
+      "path": "../../vendor/echarts.min.js",
+      "banner": "Apache ECharts 5.5.1, Apache License 2.0, inlined unmodified"
+    }
+  ],
+  "js": [
+    "../../layer/usability.js",
+    "../../layer/explorer.js",
+    "../../layer/customize_panel.js"
+  ]
+}

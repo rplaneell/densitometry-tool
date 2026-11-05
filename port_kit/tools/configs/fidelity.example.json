@@ -1,0 +1,62 @@
+{
+  "url": "../../../dashboard_new.html",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "steps": [
+    {
+      "select": "#example",
+      "value": "control",
+      "then_wait": 900
+    },
+    {
+      "select": "#example",
+      "value": "sample",
+      "then_wait": 1600
+    }
+  ],
+  "checks": [
+    {
+      "name": "results chart values equal the page's mg/L",
+      "sort": "desc",
+      "plotted_js": "(()=>{const o=echarts.getInstanceByDom(document.querySelector('#pl-explore .chart')).getOption();const s=o.series[0];return s.type==='scatter'?s.data.map(d=>d.value[0]):s.data.map(d=>d.value)})()",
+      "truth_js": "window.__state.L.filter(r=>r.type==='sample'&&isFinite(r.mgL)).map(r=>r.mgL)"
+    },
+    {
+      "name": "95 % range ends equal the page's",
+      "sort": "asc",
+      "plotted_js": "(()=>{const o=echarts.getInstanceByDom(document.querySelector('#pl-explore .chart')).getOption();return (o.series[1]?o.series[1].data:[]).map(d=>d[1]+'-'+d[2])})()",
+      "truth_js": "window.__state.L.filter(r=>r.type==='sample'&&isFinite(r.mgL)).map(r=>r.lo+'-'+r.hi)"
+    }
+  ],
+  "setting_changes": [
+    [
+      {
+        "click": "#pl-cust-btn"
+      },
+      {
+        "click": "#pl-cust [data-k=theme][data-v=ocean]"
+      }
+    ],
+    [
+      {
+        "click": "#pl-cust [data-k=type][data-v=dots]"
+      }
+    ],
+    [
+      {
+        "click": "#pl-cust [data-k=type][data-v=bars]"
+      },
+      {
+        "select": "#pl-cust [data-s=sort]",
+        "value": "lane"
+      }
+    ],
+    [
+      {
+        "check": "#pl-cust [data-c=log]"
+      }
+    ]
+  ]
+}
