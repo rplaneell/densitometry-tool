@@ -1,0 +1,27 @@
+/*POLISH-START aesthetics and usability only, additive*/
+html{scroll-behavior:smooth}
+section[id],.hero{scroll-margin-top:96px}
+#pl-progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--werfen),var(--blue500),var(--teal));z-index:9999;pointer-events:none}
+.site-header{transition:box-shadow .3s ease}
+.site-header.pl-scrolled{box-shadow:0 6px 24px rgba(6,3,142,.10)}
+.stepnav a{transition:background-color .25s ease,color .25s ease,box-shadow .25s ease}
+.stepnav a.pl-active{box-shadow:inset 0 -3px 0 var(--blue500);background:var(--blue100)}
+table td,table th{font-variant-numeric:tabular-nums}
+table tbody tr{transition:background-color .15s ease}
+table tbody tr:hover{background:var(--blue100)}
+:focus-visible{outline:3px solid var(--blue500);outline-offset:2px}
+#pl-skip{position:fixed;left:12px;top:-60px;z-index:10000;background:var(--werfen);color:#fff;padding:10px 16px;border-radius:var(--r-md);font:600 14px var(--font);text-decoration:none;transition:top .2s}
+#pl-skip:focus{top:12px}
+#pl-help{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(6,3,142,.35);z-index:10001;padding:16px}
+#pl-help.open{display:flex}
+#pl-help .box{background:#fff;color:var(--g700);border-radius:var(--r-md);box-shadow:var(--shadow);max-width:380px;width:100%;padding:22px 24px;font:14px/1.6 var(--font);animation:pl-fade .15s ease-out}
+#pl-help h2{margin:0 0 10px;font-size:17px;color:var(--werfen)}
+#pl-help dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
+#pl-help dt{margin:0}
+#pl-help kbd{display:inline-block;min-width:24px;text-align:center;padding:1px 7px;border:1px solid var(--g200);border-bottom-width:2px;border-radius:var(--r-sm);background:var(--g050);font:600 12px var(--font);color:var(--werfen)}
+#pl-help dd{margin:0}
+#pl-help p{margin:12px 0 0;font-size:12px;color:var(--g500)}
+@keyframes pl-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}#pl-help .box{animation:none}}
+@media print{#pl-progress,#pl-skip,#pl-help{display:none!important}}
+/*POLISH-END*/
