@@ -7,3 +7,5 @@
 `proteinquant_ORIGINAL_untouched.html` is the file exactly as received, kept for comparison.
 
 The polished page starts in the page's own calm mode (no endless animations). The Animations switch in the top bar turns motion back on. In calm mode the hero's looping demo counter stays on its final value (27.4 mg/L) instead of cycling from 0.0.
+
+Palette (current): sapphire and ocean blue carry the page; neon jade is the single loud accent, used once per view (main button, status dot, reading progress line, heading underline). `polish_layer/theme_ponceau_wine_alternative.css` is the earlier wine and magenta variant.
