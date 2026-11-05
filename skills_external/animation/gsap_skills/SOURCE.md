@@ -1,0 +1,1 @@
+Copied from greensock/gsap-skills (commit aed9cfd, 21 April 2026), MIT License. These are the official GreenSock agent skills. The GSAP library itself has its own licence (free to use, not open source): check https://gsap.com/standard-license before shipping.

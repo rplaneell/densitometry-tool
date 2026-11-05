@@ -1,0 +1,1 @@
+Copied from heygen-com/hyperframes (commit 7bebcb9, 5 November 2026), Apache License 2.0 (LICENSE here). Only the nine core skill folders are included, WITHOUT their audio (mp3), font (woff2) and test corpus files, which carry separate licences or are not needed. The CLI and the 450 block registry come from the original repository: npx hyperframes.

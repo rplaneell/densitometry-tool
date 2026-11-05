@@ -1,0 +1,1 @@
+Copied from diffusionstudio/lottie (commit 3c72912, 25 July 2026), MIT License. Only the text-to-lottie skill folder is included (it has a logo recipe). Its player and editor app are in the original repository.

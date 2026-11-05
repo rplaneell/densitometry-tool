@@ -13,3 +13,5 @@ Secrets: API keys go only in a local `.env` file, which `.gitignore` blocks. `.e
 Third party skill added: `skills_external/dashboard-design` from `abdiraimov-otabek/dashboard-design-skill` (commit b813324), kept with its own LICENSE. It is a design guide with no scripts.
 
 Plot skills: `skills/interactive-scientific-plots` (written from this project: how to add interactive, customizable plots without changing any computed number) and `skills_external/k_dense_scientific_skills` (`scientific-visualization`, `matplotlib`, `seaborn` from `K-Dense-AI/scientific-agent-skills`, MIT).
+
+Animation skills: `skills_external/animation/` (HyperFrames, official GSAP skills, text to Lottie). Guide and library comparison: `docs/ANIMATION_TOOLKIT.md`. Plan for the Hydra dashboard: `docs/INTAKE_PLAN.md`.
